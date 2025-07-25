@@ -7,11 +7,11 @@ Treasure Grid is a fast-paced, multi-player “mine-sweeper” style game on a 1
 
 ## Point system
 
-- 🥳 (Player gets 10 points added to their score)
-- 😁 (Player gets 5 points added to their score)
-- 😐 (Player gets no points added to their score)
-- 😡 (Player loses 5 points from their score)
-- 🤬 (Player loses 10 points from their score)
+- 🥇 (Player gets 3 points added to their score)
+- 🥈 (Player gets 2 points added to their score)
+- 🥉 (Player gets 1 points added to their score)
+- 💣 (Player gets 0 points added to their score)
+
 
 ---
 
@@ -26,13 +26,13 @@ python server.py
 To play this game on a computer, run these commands
 
 ```bash
-python client.py <server ip address> <your name>
+python client.py <ip address of compter running the server> <your name> <port>
 ```
 
-For example if the server ip is 127.0.0.1 and your name is Bob you would type...
+For example if the server ip is 127.0.0.1, your name is Bob, and the port number you want to use is 6000 you would type...
 
 ```bash
-python client.py 127.0.0.1 Bob
+python client.py 207.23.192.227 Bob 6000
 ```
 
 
