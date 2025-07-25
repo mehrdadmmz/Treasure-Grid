@@ -7,11 +7,11 @@ Treasure Grid is a fast-paced, multi-player “mine-sweeper” style game on a 1
 
 ## Point system
 
-🥳 (Player gets 10 points added to their score)
-😁 (Player gets 5 points added to their score)
-😐 (Player gets no points added to their score)
-😡 (Player loses 5 points from their score)
-🤬 (Player loses 10 points from their score)
+- 🥳 (Player gets 10 points added to their score)
+- 😁 (Player gets 5 points added to their score)
+- 😐 (Player gets no points added to their score)
+- 😡 (Player loses 5 points from their score)
+- 🤬 (Player loses 10 points from their score)
 
 ---
 
