@@ -16,9 +16,8 @@ except ImportError:
 # ─────────────────────────────────────────────────────────────────────
 
 # ---------------- command-line defaults ------------------------------
-HOST         = sys.argv[1] if len(sys.argv) > 1 else "127.0.0.1"
-NAME_DEFAULT = sys.argv[2] if len(sys.argv) > 2 else "Player"
-PORT         = int(sys.argv[3]) if len(sys.argv) > 3 else 6000
+HOST = sys.argv[1] if len(sys.argv) > 1 else "127.0.0.1"
+PORT = int(sys.argv[2]) if len(sys.argv) > 2 else 6000
 
 # ---------------- colour + sound mapping -----------------------------
 COLOR_CHOICES = [
@@ -51,7 +50,7 @@ class ClientGUI(tk.Tk):
         self.q           = queue.Queue()
         self.players     = {}          # pid ➜ {name,color,ready}
         self.pid         = None
-        self.my_name     = NAME_DEFAULT
+        self.my_name     = "Player"
         self.my_color    = None
         self.color_btns  = {}          # hex ➜ btn widget
 

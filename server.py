@@ -17,7 +17,7 @@ import time
 from board import Board
 
 # ─────────────────── configuration ───────────────────────────────────
-HOST         = "0.0.0.0"
+HOST         = "127.0.0.1"
 PORT         = int(sys.argv[1]) if len(sys.argv) > 1 else 6000
 BOARD_SIZE   = 10
 TIME_LIMIT   = 60                # seconds per round
@@ -210,7 +210,7 @@ class TreasureServer:
 
     # ────────────────── main loop ────────────────────────────────────
     def serve_forever(self):
-        with socket.create_server((HOST, PORT), reuse_port=True) as s:
+        with socket.create_server((HOST, PORT)) as s:
             print(f"[SERVER] Listening on {PORT} …")
             while True:
                 conn, _ = s.accept()

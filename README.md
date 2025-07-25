@@ -1,41 +1,55 @@
 # Grid Rush
 
-
-Treasure Grid is a fast-paced, multi-player “mine-sweeper” style game on a 10×10 grid. Up to 5 players connect to a central server; each unrevealed cell is a shared resource protected by a per-cell mutex. Players click cells simultaneously to “claim” them; which reveal an emoji which can affect the player’s score according to the Point System below. 
-
----
-
-## Point system
-
-- 🥇 (Player gets 3 points added to their score)
-- 🥈 (Player gets 2 points added to their score)
-- 🥉 (Player gets 1 points added to their score)
-- 💣 (Player gets 0 points added to their score)
-
+**Grid Rush** is a fast-paced, multiplayer “Minesweeper-style” game played on a 10×10 grid. Up to 5 players can connect to a central server. Each unrevealed cell acts as a shared resource protected by a per-cell mutex. Players simultaneously attempt to claim cells, which then reveal emojis affecting their score according to the point system below.
 
 ---
 
-## Compile and Run
+## 🎯 Point System
 
-To run the server, run this command on one computer
+| Emoji | Description                  | Points |
+|-------|------------------------------|--------|
+| 🥇    | Gold Medal                   | +3     |
+| 🥈    | Silver Medal                 | +2     |
+| 🥉    | Bronze Medal                 | +1     |
+| 💣    | Bomb                         | +0     |
+
+---
+
+## 🖥️ How to Run
+
+### 1. Install Requirements
+
+Make sure you have Python 3 installed. Then install dependencies with:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Start the Server
+
+On one machine (the host/server):
 
 ```bash
 python server.py
 ```
 
-To play this game on a computer, run these commands
+### 3. Start a Client
+
+On each player’s machine:
 
 ```bash
-python client.py <ip address of compter running the server> <your name> <port>
+python client.py <server_ip> <port>
 ```
 
-For example if the server ip is 127.0.0.1, your name is Bob, and the port number you want to use is 6000 you would type...
+**Example:**
 
 ```bash
-python client.py 207.23.192.227 Bob 6000
+python client.py 127.0.0.1 6000
 ```
 
+---
 
+## 🧑‍💻 Notes
 
-
-
+- Ensure all players are on the same network or that the server is publicly accessible.
+- Each player must use a unique name and port number.
