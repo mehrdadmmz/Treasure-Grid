@@ -17,15 +17,19 @@ Treasure Grid is a fast-paced, multi-player “mine-sweeper” style game on a 1
 
 ## Compile and Run
 
-To run the program, run these commands in order
+To run the server, run this command on one computer
 
 ```bash
 python server.py
 ```
 
+To play this game on a computer, run these commands
+
 ```bash
-python client.py 127.0.0.1 Alice
+python client.py <server ip address> <your name>
 ```
+
+For example if the server ip is 127.0.0.1 and your name is Bob you would type...
 
 ```bash
 python client.py 127.0.0.1 Bob
