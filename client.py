@@ -4,8 +4,8 @@ from tkinter import messagebox
 
 # ---------------- command-line defaults ------------------------------
 HOST  = sys.argv[1] if len(sys.argv) > 1 else "127.0.0.1"
-NAME  = sys.argv[2] if len(sys.argv) > 2 else "Player"
-PORT  = int(sys.argv[3]) if len(sys.argv) > 3 else 6000
+PORT  = int(sys.argv[2]) if len(sys.argv) > 2 else 6000
+NAME  = "name"
 
 # ---------------- emoji sets ----------------------------------------
 COMMON_NEG = { -5: "💀", -1: "💣" }    # same for every theme

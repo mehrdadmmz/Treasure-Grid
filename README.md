@@ -53,7 +53,7 @@ _Default port is `6000` if not specified._
 
 #### 2. Start clients (in separate terminals or machines):
 ```bash
-python client.py [host] [player_name] [port]
+python client.py [host] [port]
 ```
 - `host`: IP address of the server (default: `127.0.0.1`)
 - `player_name`: Optional name to show in-game
