@@ -47,7 +47,7 @@
 
 #### 1. Start the server:
 ```bash
-python server.py [host] [port]
+python server.py [port]
 ```
 _Default port is `6000` if not specified._
 

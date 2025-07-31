@@ -14,8 +14,8 @@ import time
 from board import Board
 
 # ─────────────────── configuration ───────────────────────────────────
-HOST = sys.argv[1] if len(sys.argv) > 1 else os.getenv("HOST", "127.0.0.1")
-PORT = int(sys.argv[2]) if len(sys.argv) > 2 else 6000
+HOST = "0.0.0.0"
+PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 6000
 BOARD_SIZE = 10
 TIME_LIMIT = 60          # seconds after BEGIN
 
@@ -123,6 +123,8 @@ class TreasureServer:
                     "spectator": spectator,
                     "score": 0, "streak": 0,
                 }
+                print(f"[SERVER] Player {pid} connected")
+
 
             conn.sendall((json.dumps(
                 {"type": "WELCOME", "player": pid,
