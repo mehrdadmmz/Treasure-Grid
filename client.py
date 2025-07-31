@@ -1,4 +1,3 @@
-# client.py
 import json, queue, random, socket, sys, threading, tkinter as tk
 from tkinter import messagebox
 

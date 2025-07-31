@@ -1,7 +1,5 @@
-# board.py
 import random
 import threading
-
 
 class SquareState:
     """Internal enum for a cell’s state."""

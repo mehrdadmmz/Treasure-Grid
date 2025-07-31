@@ -38,7 +38,7 @@
    cd treasure-grid
    ```
 
-2. Install dependencies (none required beyond standard library):
+2. Install dependencies (none required beyond standard library) (Optional):
    ```bash
    pip install -r requirements.txt
    ```
