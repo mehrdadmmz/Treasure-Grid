@@ -1,8 +1,8 @@
-# 🗺️ Treasure Grid
+# Treasure Grid
 
 **Treasure Grid** is a multiplayer Mines-style game built with Python. Players race to uncover a grid filled with bombs and treasure, aiming to score the highest points in 60 seconds.
 
-## 🎮 Features
+## Features
 
 - Real-time multiplayer gameplay using sockets
 - Graphical user interface (GUI) with `tkinter`
@@ -11,7 +11,7 @@
 - Bomb streak penalty system
 - Thread-safe game board logic
 
-## 🧩 Game Rules
+## Game Rules
 
 - Click tiles to reveal coins or bombs.
 - Coins:
@@ -23,7 +23,7 @@
   - 3 bombs in a row = 💀 = -5 points
 - Highest score after 60 seconds wins!
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Requirements
 
@@ -59,7 +59,7 @@ python client.py [host] [port]
 - `player_name`: Optional name to show in-game
 - `port`: Optional port (default: `6000`)
 
-## 🧠 Project Structure
+## Project Structure
 
 ```
 board.py    # Game board and square logic (thread-safe)
@@ -67,12 +67,12 @@ server.py   # Game server logic using sockets and threading
 client.py   # GUI client built with tkinter
 ```
 
-## 🛠️ Notes
+## Notes
 
 - Ensure all clients use the same port as the server.
 - Works on LAN or localhost.
 - Tested on Python 3.10.
 
-## 📜 License
+## License
 
 MIT License. See `LICENSE` file for details.
