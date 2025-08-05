@@ -32,16 +32,11 @@
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/mehrdadmmz/Socket-371.git
-   cd Socket-371
-   ```
-
-2. Install dependencies (none required beyond standard library) (Optional):
-   ```bash
-   pip install -r requirements.txt
-   ```
+Clone the repository:
+```bash
+git clone https://github.com/mehrdadmmz/Socket-371.git
+cd Socket-371
+```
 
 ### Running the Game
 
