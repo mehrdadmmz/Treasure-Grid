@@ -94,15 +94,26 @@ class TreasureServer:
             self.tick_handle = None
 
         board = sorted(((pid, p["score"]) for pid, p in self.players.items()),
-                       key=lambda x: -x[1])
+                    key=lambda x: -x[1])
         leaderboard = [{"player": pid, "name": self.players[pid]["name"],
                         "score": sc} for pid, sc in board]
         top = leaderboard[0]["score"] if leaderboard else 0
         winners = [d["player"] for d in leaderboard if d["score"] == top]
 
         self._broadcast({"type": "GAMEOVER",
-                         "leaderboard": leaderboard,
-                         "winners": winners})
+                        "leaderboard": leaderboard,
+                        "winners": winners})
+
+        print("[SERVER] Game finished. Server shutting down…")
+        if hasattr(self, "server_socket"):
+            self.server_socket.close()  # this will unblock accept()
+
+        # give threads time to finish
+        threading.Timer(1, lambda: sys.exit(0)).start()
+
+    def _shutdown_server(self):
+        print("[SERVER] Shutting down…")
+        sys.exit(0)
 
     def _check_auto_win(self):
         if self.game_started and len([p for p in self.players.values()
@@ -132,10 +143,16 @@ class TreasureServer:
                  "spectator": spectator, "size": BOARD_SIZE}) + "\n").encode())
             self._send_player_list()
 
-            for line in file:
-                try: msg = json.loads(line.strip())
-                except json.JSONDecodeError: continue
-                self._handle_msg(pid, msg)
+            try:
+                for line in file:
+                    try:
+                        msg = json.loads(line.strip())
+                    except json.JSONDecodeError:
+                        continue
+                    self._handle_msg(pid, msg)
+            except (ConnectionResetError, OSError):
+                pass  # expected when shutting down
+
         finally:
             with self.lock:
                 if pid in self.players: self.players.pop(pid)
@@ -196,13 +213,17 @@ class TreasureServer:
 
     # ────────────────── main loop ────────────────────────────────────
     def serve_forever(self):
-        with socket.create_server((HOST, PORT)) as s: # note: don't add reuse_port, it doesn't work on windows
+        with socket.create_server((HOST, PORT)) as s:
+            self.server_socket = s
             print(f"[SERVER] Listening on {PORT} …")
             while True:
-                conn, _ = s.accept()
+                try:
+                    conn, _ = s.accept()
+                except OSError:
+                    break  # socket was closed, exit loop
                 threading.Thread(target=self._client_thread,
-                                 args=(conn,), daemon=True).start()
-
+                                args=(conn,), daemon=True).start()
+        print("[SERVER] Server loop ended.")
 
 # =====================================================================
 if __name__ == "__main__":
