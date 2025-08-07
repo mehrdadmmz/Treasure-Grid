@@ -34,8 +34,8 @@
 
 Clone the repository:
 ```bash
-git clone https://github.com/mehrdadmmz/Socket-371.git
-cd Socket-371
+git clone https://github.com/mehrdadmmz/Treasure-Grid.git
+cd Treasure-Grid
 ```
 
 ### Running the Game
