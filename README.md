@@ -68,6 +68,12 @@ client.py   # GUI client built with tkinter
 - Works on LAN or localhost.
 - Tested on Python 3.10.
 
+## Glimpse of the game
+<img width="699" height="734" alt="1" src="https://github.com/user-attachments/assets/02153c8d-a90c-4a62-951f-9195c2810223" />
+
+<img width="696" height="728" alt="2" src="https://github.com/user-attachments/assets/eb76e929-f797-4c5b-a35c-64476463956b" />
+
+
 ## License
 
 MIT License. See `LICENSE` file for details.
