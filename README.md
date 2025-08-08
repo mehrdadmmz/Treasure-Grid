@@ -2,6 +2,8 @@
 
 **Treasure Grid** is a multiplayer Mines-style game built with Python. Players race to uncover a grid filled with bombs and treasure, aiming to score the highest points in 60 seconds.
 
+Demo video is accessible through this link: https://www.youtube.com/watch?v=4qnnN0msCEo
+
 ## Features
 
 - Real-time multiplayer gameplay using sockets
