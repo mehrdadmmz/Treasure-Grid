@@ -1,5 +1,11 @@
 # Treasure Grid
 
+![Python](https://img.shields.io/badge/Python-3.7+-blue?logo=python)
+![Tkinter](https://img.shields.io/badge/GUI-Tkinter-lightgrey)
+![Sockets](https://img.shields.io/badge/Networking-Sockets-green)
+![Multiplayer](https://img.shields.io/badge/Gameplay-Multiplayer-orange)
+![Threading](https://img.shields.io/badge/Concurrency-Threading-purple)
+
 **Treasure Grid** is a multiplayer Mines-style game built with Python. Players race to uncover a grid filled with bombs and treasure, aiming to score the highest points in 60 seconds.
 
 Demo video is accessible through this link: https://www.youtube.com/watch?v=4qnnN0msCEo
